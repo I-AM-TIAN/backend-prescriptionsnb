@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
 import { PrescriptionsModule } from './prescriptions/prescriptions.module';
+import { PdfService } from './shared/pdf.service';
 
 
 @Module({
@@ -12,5 +13,6 @@ import { PrescriptionsModule } from './prescriptions/prescriptions.module';
     AuthModule,
     PrescriptionsModule,
   ],
+
 })
 export class AppModule {}

@@ -26,6 +26,7 @@ model User {
   refreshTokenHash String?
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
+  deletedAt        DateTime?
 
   // Relaciones
   doctorPrescriptions  Prescription[] @relation("DoctorPrescriptions")
@@ -46,6 +47,7 @@ model Prescription {
   items       PrescriptionItem[]
   createdAt   DateTime           @default(now())
   consumedAt  DateTime?
+  deletedAt   DateTime?
 
   @@index([doctorId, status, createdAt])
   @@index([patientId, status, createdAt])
